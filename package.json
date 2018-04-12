@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "name": "debugging-smart-tv",
+    "description": "Use new Image to debug Smart TV applications",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": {
+        "name": "Piotr Kowalski",
+        "email": "piecioshka@gmail.com",
+        "url": "https://piecioshka.pl/"
+    },
+    "scripts": {
+        "clear": "cat /dev/null",
+        "clear:all": "rm -rf node_modules/ && npm run clear",
+        "count": "find . -name '*.js' -not -path './node_modules/*' | xargs wc -l | sort -r"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}
