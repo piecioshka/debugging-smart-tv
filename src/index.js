@@ -5,9 +5,10 @@
     var LOG_PREFIX = 'Smart TV Debugging';
     var DEBUG_SCREEN_STYLES = {
         'box-sizing': 'border-box',
-        'background-color': '#324D5C',
         'font-size': '30px',
+        'background': 'transparent',
         'min-height': '100%',
+        'z-index': 9999999,
         color: '#F0CA4D',
         position: 'absolute',
         left: 0,
@@ -22,6 +23,8 @@
     // -------------------------------------------------------------------------
 
     var ONE_SECOND = 1000;
+    var CLOCK_INTERVAL = null;
+    var $debugScreen = null;
 
     function assign(target) {
         var args = Array.prototype.slice.call(arguments);
@@ -66,10 +69,18 @@
     function setupClock() {
         log('setupClock');
 
-        setInterval(function () {
+        CLOCK_INTERVAL = setInterval(function () {
             var time = new Date().getTime();
             log('tick-' + time);
         }, ONE_SECOND);
+    }
+
+    function stopClock() {
+        log('stopClock');
+
+        if (CLOCK_INTERVAL) {
+            clearInterval(CLOCK_INTERVAL);
+        }
     }
 
     function displayDebugScreen() {
@@ -78,7 +89,7 @@
             return;
         }
 
-        var $debugScreen = document.createElement('pre');
+        $debugScreen = document.createElement('pre');
         assign($debugScreen.style, DEBUG_SCREEN_STYLES);
         document.body.appendChild($debugScreen);
 
@@ -88,7 +99,7 @@
     function setupDebugScreen() {
         var $debugScreen = displayDebugScreen();
         log = after(log, function (message) {
-            $debugScreen.innerHTML += message + '\n';
+            $debugScreen.innerHTML = message +  '\n' + $debugScreen.innerHTML;
         });
 
         log('setupDebugScreen');
@@ -100,6 +111,7 @@
         });
 
         window.addEventListener('error', function (evt) {
+            expandError();
             log('DOMEvent triggered: window.onerror');
             log(' - error: message=' + evt.message);
             log(' - error: file=' + evt.filename);
@@ -121,8 +133,18 @@
         sendImageRequest(message);
     }
 
+    function expandError() {
+        assign(DEBUG_SCREEN_STYLES, {
+            background: '#000000',
+            color: 'red'
+        });
+
+        assign($debugScreen.style, DEBUG_SCREEN_STYLES);
+    }
+
     root.SmartTVDebugging = {
         installClock: setupClock,
+        uninstallClock: stopClock,
         installDebugScreen: setupDebugScreen,
         attachWindowEvents: setupWindowEvents,
         log: function () {
