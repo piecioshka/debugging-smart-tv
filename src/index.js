@@ -98,7 +98,7 @@
     function setupDebugScreen() {
         var $debugScreen = displayDebugScreen();
         log = after(log, function (message) {
-            $debugScreen.innerHTML = message +  '\n' + $debugScreen.innerHTML;
+            $debugScreen.innerHTML = message + '\n' + $debugScreen.innerHTML;
         });
 
         log('setupDebugScreen');
