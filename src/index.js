@@ -24,6 +24,7 @@
 
     var ONE_SECOND = 1000;
     var CLOCK_INTERVAL = null;
+    var $debugScreen = null;
 
     function assign(target) {
         var args = Array.prototype.slice.call(arguments);
@@ -88,7 +89,7 @@
             return;
         }
 
-        var $debugScreen = document.createElement('pre');
+        $debugScreen = document.createElement('pre');
         assign($debugScreen.style, DEBUG_SCREEN_STYLES);
         document.body.appendChild($debugScreen);
 
@@ -98,7 +99,7 @@
     function setupDebugScreen() {
         var $debugScreen = displayDebugScreen();
         log = after(log, function (message) {
-            $debugScreen.innerHTML = message + '\n' + $debugScreen.innerHTML;
+            $debugScreen.innerHTML = message +  '\n' + $debugScreen.innerHTML;
         });
 
         log('setupDebugScreen');
@@ -110,6 +111,7 @@
         });
 
         window.addEventListener('error', function (evt) {
+            expandError();
             log('DOMEvent triggered: window.onerror');
             log(' - error: message=' + evt.message);
             log(' - error: file=' + evt.filename);
@@ -129,6 +131,15 @@
         message = '[' + LOG_PREFIX + '] ' + String(message);
         devToolsLog(message);
         sendImageRequest(message);
+    }
+
+    function expandError() {
+        assign(DEBUG_SCREEN_STYLES, {
+            background: '#000000',
+            color: 'red'
+        });
+
+        assign($debugScreen.style, DEBUG_SCREEN_STYLES);
     }
 
     root.SmartTVDebugging = {
