@@ -4,30 +4,53 @@
 
 ## Installation
 
-1. Attach file `src/index.js`
+Attach file `src/index.js`:
 
-    ```html
-    <script src="src/index.js"></script>
-    ```
+```html
+<script src="src/client/debugging.js"></script>
+<link rel="stylesheet" href="src/client/debugging.css"/>
+```
 
-2. Use function:
+## Usage
 
-    ```js
-    void SmartTVDebugging.attachWindowEvents()
-    ```
+0. `DebuggingSmartTV.installDebugScreen()`
 
-    to listen on DOM events:
+    Add availability to display `Debug Screen`.<br/>
+    `Debug Screen` will be display after you click `SPECIAL_BUTTON`
+
+0. `DebuggingSmartTV.installClock()`
+
+    Create one-second lock which logs on every tick.
+
+0. `DebuggingSmartTV.attachWindowEvents()`
+
+    Listen on DOM events and produce logs:
 
     - `window.onload`
     - `window.onerror`
 
-3. Use function:
+0. `DebuggingSmartTV.log( message: string )`
 
-    ```js
-    void SmartTVDebugging.log( message /** @type string **/)
-    ```
+    Log any message.
 
-    to log any message.
+0. `DebuggingSmartTV.SPECIAL_BUTTON`
+
+    Default value: 3
+
+## Features
+
+* Display logs in regular Console in DevTools
+* Display logs in HTTP Traffic
+* Display logs on Debug Screen
+* Debug Screen:
+    - **Logs are prefixed** with current time
+    - AutoScroll is enabled
+    - Visibility is toggleable (show / hide after pressing `SPECIAL_BUTTON`)
+* HTTP Traffic:
+    - **Logs are not prefixed**
+    - Logs are [slugify](https://blog.tersmitten.nl/slugify/) (remove special chars)
+* DevTools Console
+    - **Logs are prefixed** with constant string
 
 ## Rules
 

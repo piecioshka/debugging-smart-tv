@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>debugging-smart-tv</title>
+    <meta charset="utf-8"/>
+
+    <script src="../src/client/debugging.js"></script>
+    <link rel="stylesheet" href="../src/client/debugging.css"/>
+</head>
+<body>
+
+<script>
+    // DebuggingSmartTV.SPECIAL_BUTTON = 113; // "q" key
+    DebuggingSmartTV.installDebugScreen();
+    DebuggingSmartTV.installClock();
+    DebuggingSmartTV.attachWindowEvents();
+    DebuggingSmartTV.log('[test message which is easy to grep]');
+</script>
+
+</body>
+</html>
