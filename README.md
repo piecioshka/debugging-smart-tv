@@ -4,7 +4,7 @@
 
 ## Installation
 
-Attach file `src/index.js`:
+Attach code below into main HTML file in your app, ex. `index.html`:
 
 ```html
 <script src="src/client/debugging.js"></script>
@@ -13,44 +13,45 @@ Attach file `src/index.js`:
 
 ## Usage
 
-0. `DebuggingSmartTV.installDebugScreen()`
+### `DebuggingSmartTV.installDebugScreen()`
 
-    Add availability to display `Debug Screen`.<br/>
-    `Debug Screen` will be display after you click `SPECIAL_BUTTON`
+Add availability to display `Debug Screen`.<br/>
+`Debug Screen` will be display after you click `SPECIAL_BUTTON`
 
-0. `DebuggingSmartTV.installClock()`
+### `DebuggingSmartTV.installClock()`
 
-    Create one-second lock which logs on every tick.
+Create one-second lock which logs on every tick.
 
-0. `DebuggingSmartTV.attachWindowEvents()`
+### `DebuggingSmartTV.attachWindowEvents()`
 
-    Listen on DOM events and produce logs:
+Listen on DOM events and produce logs:
 
-    - `window.onload`
-    - `window.onerror`
+- `window.onload`
+- `window.onerror`
 
-0. `DebuggingSmartTV.log( message: string )`
+### `DebuggingSmartTV.log( message: string )`
 
-    Log any message.
+Log any message.
 
-0. `DebuggingSmartTV.SPECIAL_BUTTON`
+### `DebuggingSmartTV.SPECIAL_BUTTON`
 
-    Default value: 3
+_Default value: 3_
 
 ## Features
 
-* Display logs in regular Console in DevTools
-* Display logs in HTTP Traffic
-* Display logs on Debug Screen
-* Debug Screen:
+* [x] Display logs in regular Console in DevTools
+* [x] Display logs in HTTP Traffic
+* [x] Display logs on Debug Screen
+* [x] Debug Screen:
     - **Logs are prefixed** with current time
     - AutoScroll is enabled
     - Visibility is toggleable (show / hide after pressing `SPECIAL_BUTTON`)
-* HTTP Traffic:
+* [x] HTTP Traffic:
     - **Logs are not prefixed**
     - Logs are [slugify](https://blog.tersmitten.nl/slugify/) (remove special chars)
-* DevTools Console
+* [x] DevTools Console
     - **Logs are prefixed** with constant string
+* [ ] Read HTTP Traffic in server-side part
 
 ## Rules
 
