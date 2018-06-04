@@ -11,6 +11,7 @@
     - **Logs are prefixed** with current time
     - AutoScroll is enabled
     - Visibility is toggleable (show / hide after pressing `SPECIAL_BUTTON`)
+    - Wrap lines
 * :white_check_mark: HTTP Traffic:
     - **Logs are not prefixed**
     - Logs are [slugify](https://blog.tersmitten.nl/slugify/) (remove special chars)

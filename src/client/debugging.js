@@ -3,8 +3,9 @@
 
     var DOMAIN = 'piecioshka.pl';
     var LOG_PREFIX = 'Debugging Smart TV';
-    var DEBUG_SCREEN_ID = 'debugging-smart-tv';
-    var DEBUG_SCREEN_STYLES = {};
+
+    var DEBUG_SCREEN_ID = 'debugging-smart-tv'; // After changes, remember about CSS
+    var DEBUG_SCREEN_TAG_NAME = 'pre';
     var REVEAL_LOGS_NUMBER = 10;
 
     // -------------------------------------------------------------------------
@@ -19,22 +20,6 @@
     var isDebugScreenVisible = false;
     var isConsoleEnabled = (typeof console === 'object'
         || typeof console.log === 'function');
-
-    function assign(target) {
-        var args = Array.prototype.slice.call(arguments);
-        var sources = args.slice(1);
-
-        for (var i = 0; i < sources.length; i++) {
-            var source = sources[i];
-
-            for (var key in source) {
-
-                if (source.hasOwnProperty(key)) {
-                    target[key] = source[key];
-                }
-            }
-        }
-    }
 
     function slugify(text) {
         if (typeof text !== 'string') {
@@ -118,9 +103,8 @@
     }
 
     function renderDebugScreen() {
-        $debugScreen = document.createElement('pre');
+        $debugScreen = document.createElement(DEBUG_SCREEN_TAG_NAME);
         $debugScreen.id = DEBUG_SCREEN_ID;
-        assign($debugScreen.style, DEBUG_SCREEN_STYLES);
         document.body.appendChild($debugScreen);
     }
 
