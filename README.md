@@ -1,6 +1,6 @@
 # debugging-smart-tv
 
-> :hammer: Use `new Image` to debug Smart TV applications
+> :hammer: Tool for debugging Smart TV applications
 
 ## Features
 
@@ -18,7 +18,7 @@
     - **Logs are prefixed** with constant string
 * :bulb: Read HTTP Traffic in server-side part
 
-## Installation
+## Getting started
 
 Attach code below into main HTML file in your app, ex. `index.html`:
 
@@ -26,6 +26,9 @@ Attach code below into main HTML file in your app, ex. `index.html`:
 <script src="src/client/debugging.js"></script>
 <link rel="stylesheet" href="src/client/debugging.css"/>
 ```
+
+When browser execute `debugging.js` file, in window namespace will be available
+`DebuggingSmartTV` object with API which is described below.
 
 ## Usage
 
@@ -51,9 +54,9 @@ Log any message.
 
 ### `DebuggingSmartTV.SPECIAL_BUTTON`
 
-_Default value: 3_
+Default value: :three: (keyCode: `51`)
 
-## Rules
+## Code & Project Rules
 
 * `ECMAScript 3` Standard 
 
