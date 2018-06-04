@@ -1,16 +1,20 @@
 pre#debugging-smart-tv {
     box-sizing: border-box;
-    background-color: #324D5C;
-    font-size: 15px;
-    min-height: 100%;
-    color: #F0CA4D;
+    z-index: 9999999;
+
     position: absolute;
     left: 0;
     top: 0;
+
     width: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 10px;
-    opacity: 0.8
+
+    background-color: #324D5C;
+    color: #F0CA4D;
+    font-size: 15px;
+    opacity: 0.7
 }
 
 pre#debugging-smart-tv em {
