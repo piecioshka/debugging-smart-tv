@@ -2,6 +2,22 @@
 
 > :hammer: Use `new Image` to debug Smart TV applications
 
+## Features
+
+* :white_check_mark: Display logs in regular Console in DevTools
+* :white_check_mark: Display logs in HTTP Traffic
+* :white_check_mark: Display logs on Debug Screen
+* :white_check_mark: Debug Screen:
+    - **Logs are prefixed** with current time
+    - AutoScroll is enabled
+    - Visibility is toggleable (show / hide after pressing `SPECIAL_BUTTON`)
+* :white_check_mark: HTTP Traffic:
+    - **Logs are not prefixed**
+    - Logs are [slugify](https://blog.tersmitten.nl/slugify/) (remove special chars)
+* :white_check_mark: DevTools Console
+    - **Logs are prefixed** with constant string
+* :bulb: Read HTTP Traffic in server-side part
+
 ## Installation
 
 Attach code below into main HTML file in your app, ex. `index.html`:
@@ -36,22 +52,6 @@ Log any message.
 ### `DebuggingSmartTV.SPECIAL_BUTTON`
 
 _Default value: 3_
-
-## Features
-
-* [x] Display logs in regular Console in DevTools
-* [x] Display logs in HTTP Traffic
-* [x] Display logs on Debug Screen
-* [x] Debug Screen:
-    - **Logs are prefixed** with current time
-    - AutoScroll is enabled
-    - Visibility is toggleable (show / hide after pressing `SPECIAL_BUTTON`)
-* [x] HTTP Traffic:
-    - **Logs are not prefixed**
-    - Logs are [slugify](https://blog.tersmitten.nl/slugify/) (remove special chars)
-* [x] DevTools Console
-    - **Logs are prefixed** with constant string
-* [ ] Read HTTP Traffic in server-side part
 
 ## Rules
 
