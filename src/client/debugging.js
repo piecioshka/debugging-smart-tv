@@ -131,8 +131,7 @@
             return;
         }
 
-        var body = document.documentElement || document.body;
-        body.scrollTop += $debugScreen.clientHeight;
+        $debugScreen.scrollTop = $debugScreen.scrollHeight;
     }
 
     function setupDebugScreen() {
