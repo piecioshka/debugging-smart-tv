@@ -14,7 +14,7 @@
     - Wrap lines
 * :white_check_mark: HTTP Traffic:
     - **Logs are not prefixed**
-    - Logs are [slugify](https://blog.tersmitten.nl/slugify/) (remove special chars)
+    - Logs are slugged (removed special chars)
 * :white_check_mark: DevTools Console
     - **Logs are prefixed** with constant string
 * :bulb: Read HTTP Traffic in server-side part
