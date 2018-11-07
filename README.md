@@ -17,7 +17,7 @@
     - Logs are slugged (removed special chars)
 * :white_check_mark: DevTools Console
     - **Logs are prefixed** with constant string
-* :bulb: Read HTTP Traffic in server-side part
+* :no_entry: Read HTTP Traffic in server-side part
 
 ## Getting started
 
