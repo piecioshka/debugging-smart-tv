@@ -1,6 +1,6 @@
 # debugging-smart-tv
 
-> :hammer: Tool for debugging Smart TV applications
+:hammer: Tool for debugging Smart TV applications
 
 ## Features
 
@@ -8,15 +8,15 @@
 * :white_check_mark: Display logs in HTTP Traffic
 * :white_check_mark: Display logs on Debug Screen
 * :white_check_mark: Debug Screen:
-    - **Logs are prefixed** with current time
-    - AutoScroll is enabled
-    - Visibility is toggleable (show / hide after pressing `SPECIAL_BUTTON`)
-    - Wrap lines
+    + **Logs are prefixed** with current time
+    + AutoScroll is enabled
+    + Visibility is toggleable (show / hide after pressing `SPECIAL_BUTTON`)
+    + Wrap lines
 * :white_check_mark: HTTP Traffic:
-    - **Logs are not prefixed**
-    - Logs are slugged (removed special chars)
+    + **Logs are not prefixed**
+    + Logs are slugged (removed special chars)
 * :white_check_mark: DevTools Console
-    - **Logs are prefixed** with constant string
+    + **Logs are prefixed** with constant string
 * :no_entry: Read HTTP Traffic in server-side part
 
 ## Getting started
@@ -46,8 +46,8 @@ Create one-second lock which logs on every tick.
 
 Listen on DOM events and produce logs:
 
-- `window.onload`
-- `window.onerror`
+* `window.onload`
+* `window.onerror`
 
 ### `DebuggingSmartTV.log( message: string )`
 
@@ -59,7 +59,7 @@ Default value: :three: (keyCode: `51`)
 
 ## Code & Project Rules
 
-* `ECMAScript 3` Standard 
+* `ECMAScript 3` Standard
 
     _Reason: Destination platforms does not support ES5+._
 
